@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>葉奇昌 | Google Gemini 專業證照展示館</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts Noto Sans TC & Playfair Display (外文古典美) -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght=300;400;500;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script>
@@ -21,12 +18,12 @@
                     },
                     colors: {
                         brand: {
-                            beige: '#FDFBF7',  // 極致暖米白底色
-                            dark: '#2D2A26',   // 炭灰深色文字
-                            accent: '#8C7853', // 暖大地金屬色
-                            accentLight: '#F3EFE6', // 輕透暖沙色
-                            google: '#4285F4',     // Google 經典藍
-                            gemini: '#1a73e8'      // Gemini 智慧藍
+                            beige: '#FDFBF7',
+                            dark: '#2D2A26',
+                            accent: '#8C7853',
+                            accentLight: '#F3EFE6',
+                            google: '#4285F4',
+                            gemini: '#1a73e8'
                         }
                     }
                 }
@@ -34,18 +31,8 @@
         }
     </script>
     <style>
-        body {
-            font-family: 'Noto Sans TC', sans-serif;
-            background-color: #FDFBF7;
-            scroll-behavior: smooth;
-        }
-        .premium-shadow {
-            box-shadow: 0 12px 40px -12px rgba(140, 120, 83, 0.18);
-        }
-        .premium-shadow-sm {
-            box-shadow: 0 6px 20px -5px rgba(140, 120, 83, 0.08);
-        }
-        /* 證書紋路浮水印模擬 */
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #FDFBF7; }
+        .premium-shadow-sm { box-shadow: 0 6px 20px -5px rgba(140, 120, 83, 0.08); }
         .guilloche-bg {
             background-image: radial-gradient(circle, #8c7853 0.5px, transparent 0.5px), radial-gradient(circle, #8c7853 0.5px, #fdfbf7 0.5px);
             background-size: 8px 8px;
@@ -54,204 +41,86 @@
         }
     </style>
 </head>
-<body class="text-brand-dark min-h-screen selection:bg-brand-accent/20 selection:text-brand-accent flex flex-col">
+<body class="text-brand-dark min-h-screen flex flex-col">
 
-    <!-- 頂部精緻導航列 -->
     <header class="sticky top-0 z-40 bg-brand-beige/90 backdrop-blur-md border-b border-brand-accent/10">
         <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-            <!-- 左上角單獨放置的「返回首頁」按鈕 -->
-            <a href="https://jkes48822789-cmyk.github.io/Portfolio/" class="font-medium text-xs md:text-sm tracking-wider text-stone-600 hover:text-brand-accent flex items-center gap-1.5 group transition-colors">
-                <i class="fa-solid fa-arrow-left transition-transform group-hover:-translate-x-1"></i>
-                <span>返回首頁</span>
+            <a href="https://jkes48822789-cmyk.github.io/Portfolio/" class="font-medium text-xs md:text-sm tracking-wider text-stone-600 hover:text-brand-accent flex items-center gap-1.5 transition-colors">
+                <i class="fa-solid fa-arrow-left"></i> 返回首頁
             </a>
-            <!-- 位於返回首頁右側位置的姓名 -->
-            <span class="font-bold text-xs md:text-sm tracking-widest text-brand-accent">
-                YEH CHI-CHANG
-            </span>
+            <span class="font-bold text-xs md:text-sm tracking-widest text-brand-accent">YEH CHI-CHANG</span>
         </div>
     </header>
 
-    <!-- 頁面主題橫幅 -->
-    <section class="max-w-4xl mx-auto px-6 pt-12 pb-8 text-center">
-        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mt-3 mb-2">Google Gemini 專業認證館</h1>
-        <p class="text-stone-500 text-xs md:text-sm max-w-xl mx-auto leading-relaxed">
-            此空間集中展示葉奇昌所考取之 Google for Education 生成式 AI 國際認證。證書展現在數位教育與前沿 AI 工具（Gemini）深度應用的專業素養與創新教研能力。
-        </p>
-        <div class="h-[1px] w-16 bg-brand-accent/30 mx-auto mt-6"></div>
-    </section>
-
-    <!-- 證照列表堆疊區 (Vertical Stack List) -->
-    <main class="max-w-4xl mx-auto px-6 flex-grow mb-16 w-full">
-        <div class="flex flex-col gap-8" id="credentials-grid">
-            
-            <!-- Gemini 認證教師證書 -->
-            <div class="cert-card bg-white rounded-2xl premium-shadow-sm border border-brand-accent/5 flex flex-col md:flex-row overflow-hidden group hover:shadow-md transition-all duration-300">
-                <!-- 左側/上側：相片區域 -->
-                <div class="md:w-1/3 aspect-[4/3] md:aspect-auto bg-stone-50/50 p-5 relative overflow-hidden flex items-center justify-center border-b md:border-b-0 md:border-r border-stone-100 shrink-0">
-                    <img 
-                        src="https://jkes48822789-cmyk.github.io/Portfolio/Image/GeminiTeacher.jpg" 
-                        alt="Gemini 認證教師證書" 
-                        class="max-w-full max-h-full object-contain rounded-sm drop-shadow-md transition-transform duration-500 group-hover:scale-102"
-                        onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
-                    >
-                    <!-- 圖片未上傳時的優雅向量佔位 -->
-                    <div class="absolute inset-0 bg-brand-beige/40 flex flex-col items-center justify-center p-4 text-center hidden">
-                        <div class="guilloche-bg absolute inset-0"></div>
-                        <i class="fa-solid fa-chalkboard-user text-brand-google text-4xl mb-2 relative z-10"></i>
-                        <span class="text-[10px] font-bold text-stone-400 tracking-wider relative z-10">GEMINI 認證教師證書</span>
-                        <span class="text-[9px] text-stone-300 mt-0.5 italic relative z-10">(預期路徑: Image/GeminiTeacher.jpg)</span>
-                    </div>
+    <main class="max-w-4xl mx-auto px-6 py-16 w-full flex flex-col gap-8">
+        
+        <!-- 1. Gemini Certified Educator -->
+        <div class="bg-white rounded-2xl premium-shadow-sm border border-stone-100 flex flex-col md:flex-row overflow-hidden group">
+            <div class="md:w-1/3 aspect-[4/3] md:aspect-auto bg-stone-50/50 p-5 flex items-center justify-center border-b md:border-b-0 md:border-r border-stone-100 shrink-0">
+                <img src="https://jkes48822789-cmyk.github.io/Gemini/Image/GeminiCertifiedEducator.png" alt="Gemini Certified Educator" class="max-w-full h-auto object-contain">
+            </div>
+            <div class="md:w-2/3 p-6 flex flex-col justify-between">
+                <div>
+                    <span class="text-[10px] font-bold px-2.5 py-0.5 bg-brand-google/10 text-brand-google rounded-full">Google 教育認證</span>
+                    <h3 class="font-bold text-base mt-2 mb-1">Gemini 認證教師證書</h3>
+                    <p class="text-xs text-stone-500 leading-relaxed mb-4">
+                        肯定教師在教學實務中融入 Gemini 人工智慧技術的核心素養。考核範疇著重於如何透過精準的提示詞工程進行課程規劃、輔助差異化教學、自動化評量工具開發，並運用 AI 工具激發學生的課堂參與與創新思考能力。
+                    </p>
                 </div>
-
-                <!-- 右側/下側：內容資訊區域 -->
-                <div class="md:w-2/3 p-6 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-[10px] font-bold px-2.5 py-0.5 bg-brand-google/10 text-brand-google rounded-full">Google 教育認證</span>
-                            <span class="text-[11px] text-stone-400"><i class="fa-regular fa-calendar mr-1"></i>2026.04 ~ 2029.04</span>
-                        </div>
-                        <h3 class="font-bold text-stone-800 text-base mb-1 group-hover:text-brand-accent transition-colors">Gemini 認證教師證書</h3>
-                        <p class="text-[10px] text-stone-400 font-mono mb-3">核發單位: Google for Education</p>
-                        
-                        <p class="text-xs text-stone-500 leading-relaxed mb-4">
-                            這項專業認證旨在肯定教師在教學實務中融入 Gemini 人工智慧技術的核心素養。考核範疇著重於如何透過精準的提示詞工程（Prompt Engineering）進行課程規劃、輔助差異化教學、自動化評量工具開發，並運用 AI 工具激發學生的課堂參與與創新思考能力。
-                        </p>
-                        
-                        <div class="flex flex-wrap gap-1.5 mb-3">
-                            <span class="text-[9px] bg-stone-50 border border-stone-100 text-stone-600 px-2.5 py-0.5 rounded">提示詞工程 (Prompt Engineering)</span>
-                            <span class="text-[9px] bg-stone-50 border border-stone-100 text-stone-600 px-2.5 py-0.5 rounded">AI 融入式教案開發</span>
-                            <span class="text-[9px] bg-stone-50 border border-stone-100 text-stone-600 px-2.5 py-0.5 rounded">智慧輔助教學系統應用</span>
-                            <span class="text-[9px] bg-stone-50 border border-stone-100 text-stone-600 px-2.5 py-0.5 rounded">生成式 AI 教學倫理</span>
-                        </div>
-                    </div>
-
-                    <!-- 動作按鈕 -->
-                    <div class="mt-4 pt-4 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                        <span class="text-[11px] text-stone-400 font-mono">核發系統: Google for Education Directory</span>
-                        <div class="flex gap-2">
-                            <a href="https://edu.google.com/" target="_blank" class="px-4 py-1.5 bg-brand-accent hover:bg-brand-accent/90 text-white rounded-lg text-xs font-medium flex items-center gap-1 transition-colors">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> 證照說明
-                            </a>
-                        </div>
-                    </div>
+                <div class="mt-6 flex justify-end">
+                    <a href="https://educertifications.google/register" target="_blank" class="px-4 py-2 bg-[#9F9173] hover:bg-[#8a7e63] text-white rounded-lg text-xs font-medium flex items-center gap-2 transition-colors">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> 證照說明
+                    </a>
                 </div>
             </div>
-
-            <!-- Gemini University Student -->
-            <div class="cert-card bg-white rounded-2xl premium-shadow-sm border border-brand-accent/5 flex flex-col md:flex-row overflow-hidden group hover:shadow-md transition-all duration-300">
-                <!-- 左側/上側：相片區域 -->
-                <div class="md:w-1/3 aspect-[4/3] md:aspect-auto bg-stone-50/50 p-5 relative overflow-hidden flex items-center justify-center border-b md:border-b-0 md:border-r border-stone-100 shrink-0">
-                    <img 
-                        src="https://jkes48822789-cmyk.github.io/Portfolio/Image/GeminiStudent.jpg" 
-                        alt="Gemini University Student" 
-                        class="max-w-full max-h-full object-contain rounded-sm drop-shadow-md transition-transform duration-500 group-hover:scale-102"
-                        onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
-                    >
-                    <!-- 圖片未上傳時的優雅向量佔位 -->
-                    <div class="absolute inset-0 bg-brand-beige/40 flex flex-col items-center justify-center p-4 text-center hidden">
-                        <div class="guilloche-bg absolute inset-0"></div>
-                        <i class="fa-solid fa-graduation-cap text-brand-google text-4xl mb-2 relative z-10"></i>
-                        <span class="text-[10px] font-bold text-stone-400 tracking-wider relative z-10">GEMINI UNIVERSITY STUDENT</span>
-                        <span class="text-[9px] text-stone-300 mt-0.5 italic relative z-10">(預期路徑: Image/GeminiStudent.jpg)</span>
-                    </div>
-                </div>
-
-                <!-- 右側/下側：內容資訊區域 -->
-                <div class="md:w-2/3 p-6 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-[10px] font-bold px-2.5 py-0.5 bg-brand-google/10 text-brand-google rounded-full">Google 學習認證</span>
-                            <span class="text-[11px] text-stone-400"><i class="fa-regular fa-calendar mr-1"></i>2026.04 ~ 2029.04</span>
-                        </div>
-                        <h3 class="font-bold text-stone-800 text-base mb-1 group-hover:text-brand-accent transition-colors">Gemini University Student 認證</h3>
-                        <p class="text-[10px] text-stone-400 font-mono mb-3">核發單位: Google for Education</p>
-                        
-                        <p class="text-xs text-stone-500 leading-relaxed mb-4">
-                            這項資格認證專為高等教育階段展現卓越 AI 學術應用與自主學習素養之學生而設立。考生必須掌握如何運用 Gemini 作為強大的學術助理，整合用於複雜研究文獻綜覽、結構化數據分析、多媒體簡報自動化大綱規劃，以及跨領域高效率專案協同開發。
-                        </p>
-                        
-                        <div class="flex flex-wrap gap-1.5 mb-3">
-                            <span class="text-[9px] bg-stone-50 border border-stone-100 text-stone-600 px-2.5 py-0.5 rounded">AI 輔助研究與資訊摘要</span>
-                            <span class="text-[9px] bg-stone-50 border border-stone-100 text-stone-600 px-2.5 py-0.5 rounded">高效率簡報結構大綱設計</span>
-                            <span class="text-[9px] bg-stone-50 border border-stone-100 text-stone-600 px-2.5 py-0.5 rounded">多模態資訊檢索與整理</span>
-                            <span class="text-[9px] bg-stone-50 border border-stone-100 text-stone-600 px-2.5 py-0.5 rounded">負責任的學術 AI 應用</span>
-                        </div>
-                    </div>
-
-                    <!-- 動作按鈕 -->
-                    <div class="mt-4 pt-4 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                        <span class="text-[11px] text-stone-400 font-mono">核發系統: Google for Education Directory</span>
-                        <div class="flex gap-2">
-                            <a href="https://edu.google.com/" target="_blank" class="px-4 py-1.5 bg-brand-accent hover:bg-brand-accent/90 text-white rounded-lg text-xs font-medium flex items-center gap-1 transition-colors">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> 證照說明
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Gemini Faculty -->
-            <div class="cert-card bg-white rounded-2xl premium-shadow-sm border border-brand-accent/5 flex flex-col md:flex-row overflow-hidden group hover:shadow-md transition-all duration-300">
-                <!-- 左側/上側：相片區域 -->
-                <div class="md:w-1/3 aspect-[4/3] md:aspect-auto bg-stone-50/50 p-5 relative overflow-hidden flex items-center justify-center border-b md:border-b-0 md:border-r border-stone-100 shrink-0">
-                    <img 
-                        src="https://jkes48822789-cmyk.github.io/Portfolio/Image/GeminiFaculty.jpg" 
-                        alt="Gemini Faculty" 
-                        class="max-w-full max-h-full object-contain rounded-sm drop-shadow-md transition-transform duration-500 group-hover:scale-102"
-                        onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
-                    >
-                    <!-- 圖片未上傳時的優雅向量佔位 -->
-                    <div class="absolute inset-0 bg-brand-beige/40 flex flex-col items-center justify-center p-4 text-center hidden">
-                        <div class="guilloche-bg absolute inset-0"></div>
-                        <i class="fa-solid fa-award text-brand-google text-4xl mb-2 relative z-10"></i>
-                        <span class="text-[10px] font-bold text-stone-400 tracking-wider relative z-10">GEMINI FACULTY</span>
-                        <span class="text-[9px] text-stone-300 mt-0.5 italic relative z-10">(預期路徑: Image/GeminiFaculty.jpg)</span>
-                    </div>
-                </div>
-
-                <!-- 右側/下側：內容資訊區域 -->
-                <div class="md:w-2/3 p-6 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-[10px] font-bold px-2.5 py-0.5 bg-brand-google/10 text-brand-google rounded-full">Google 學術認證</span>
-                            <span class="text-[11px] text-stone-400"><i class="fa-regular fa-calendar mr-1"></i>2026.04 ~ 2029.04</span>
-                        </div>
-                        <h3 class="font-bold text-stone-800 text-base mb-1 group-hover:text-brand-accent transition-colors">Gemini Faculty 專業導師認證</h3>
-                        <p class="text-[10px] text-stone-400 font-mono mb-3">核發單位: Google for Education</p>
-                        
-                        <p class="text-xs text-stone-500 leading-relaxed mb-4">
-                            此認證代表持有者具備在高等教育及機構層級中規劃、指導與推廣 AI 輔助教研之專業導師能力。獲證人能設計符合學術規範的 AI 教育框架，指導跨學科教職員將生成式 AI（Gemini）融入日常研究、撰寫高質量教材，並建立負責任與創新的 AI 協作環境。
-                        </p>
-                        
-                        <div class="flex flex-wrap gap-1.5 mb-3">
-                            <span class="text-[9px] bg-stone-50 border border-stone-100 text-stone-600 px-2.5 py-0.5 rounded">機構層級 AI 教育規劃</span>
-                            <span class="text-[9px] bg-stone-50 border border-stone-100 text-stone-600 px-2.5 py-0.5 rounded">教職員培訓與教學指導</span>
-                            <span class="text-[9px] bg-stone-50 border border-stone-100 text-stone-600 px-2.5 py-0.5 rounded">學術寫作與研究 AI 合規</span>
-                            <span class="text-[9px] bg-stone-50 border border-stone-100 text-stone-600 px-2.5 py-0.5 rounded">智慧教研專案架構建立</span>
-                        </div>
-                    </div>
-
-                    <!-- 動作按鈕 -->
-                    <div class="mt-4 pt-4 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                        <span class="text-[11px] text-stone-400 font-mono">核發系統: Google for Education Directory</span>
-                        <div class="flex gap-2">
-                            <a href="https://edu.google.com/" target="_blank" class="px-4 py-1.5 bg-brand-accent hover:bg-brand-accent/90 text-white rounded-lg text-xs font-medium flex items-center gap-1 transition-colors">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> 證照說明
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
+
+        <!-- 2. Gemini University Student -->
+        <div class="bg-white rounded-2xl premium-shadow-sm border border-stone-100 flex flex-col md:flex-row overflow-hidden group">
+            <div class="md:w-1/3 aspect-[4/3] md:aspect-auto bg-stone-50/50 p-5 flex items-center justify-center border-b md:border-b-0 md:border-r border-stone-100 shrink-0">
+                <img src="https://jkes48822789-cmyk.github.io/Gemini/Image/GeminiUniversityStudent.png" alt="Gemini University Student" class="max-w-full h-auto object-contain">
+            </div>
+            <div class="md:w-2/3 p-6 flex flex-col justify-between">
+                <div>
+                    <span class="text-[10px] font-bold px-2.5 py-0.5 bg-brand-google/10 text-brand-google rounded-full">Google 學習認證</span>
+                    <h3 class="font-bold text-base mt-2 mb-1">Gemini University Student 認證</h3>
+                    <p class="text-xs text-stone-500 leading-relaxed mb-4">
+                        專為高等教育階段展現卓越 AI 學術應用與自主學習素養之學生而設立。考生必須掌握如何運用 Gemini 作為強大的學術助理，整合用於複雜研究文獻綜覽、結構化數據分析、多媒體簡報自動化大綱規劃，以及跨領域高效率專案協同開發。
+                    </p>
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <a href="https://educertifications.google/register" target="_blank" class="px-4 py-2 bg-[#9F9173] hover:bg-[#8a7e63] text-white rounded-lg text-xs font-medium flex items-center gap-2 transition-colors">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> 證照說明
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Gemini Faculty -->
+        <div class="bg-white rounded-2xl premium-shadow-sm border border-stone-100 flex flex-col md:flex-row overflow-hidden group">
+            <div class="md:w-1/3 aspect-[4/3] md:aspect-auto bg-stone-50/50 p-5 flex items-center justify-center border-b md:border-b-0 md:border-r border-stone-100 shrink-0">
+                <img src="https://jkes48822789-cmyk.github.io/Gemini/Image/GeminiCertifiedFaculty.png" alt="Gemini Faculty" class="max-w-full h-auto object-contain">
+            </div>
+            <div class="md:w-2/3 p-6 flex flex-col justify-between">
+                <div>
+                    <span class="text-[10px] font-bold px-2.5 py-0.5 bg-brand-google/10 text-brand-google rounded-full">Google 學術認證</span>
+                    <h3 class="font-bold text-base mt-2 mb-1">Gemini Faculty 專業導師認證</h3>
+                    <p class="text-xs text-stone-500 leading-relaxed mb-4">
+                        代表持有者具備在高等教育及機構層級中規劃、指導與推廣 AI 輔助教研之專業導師能力。獲證人能設計符合學術規範的 AI 教育框架，指導跨學科教職員將生成式 AI 融入日常研究、撰寫高質量教材，並建立負責任與創新的 AI 協作環境。
+                    </p>
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <a href="https://educertifications.google/register" target="_blank" class="px-4 py-2 bg-[#9F9173] hover:bg-[#8a7e63] text-white rounded-lg text-xs font-medium flex items-center gap-2 transition-colors">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> 證照說明
+                    </a>
+                </div>
+            </div>
+        </div>
+
     </main>
 
-    <!-- 頁尾 (Footer) -->
     <footer class="bg-stone-900 text-stone-400 py-8 text-center mt-auto">
-        <div class="max-w-4xl mx-auto px-6 text-xs space-y-2">
-            <p class="text-stone-300">葉奇昌 ‧ Google & Gemini 專業證照展示空間</p>
-            <p>© 2026 Yee Chi-Chang. All Rights Reserved. 所有證書皆符合 Google for Education 與 Certiport 的合規授權與驗證。</p>
-        </div>
+        <p class="text-xs">© 2026 Yee Chi-Chang. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
